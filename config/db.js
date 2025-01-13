@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const db = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'ProjetPfeAgil',
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'root',
+    database: process.env.DB_NAME || 'pfedb',
     connectionLimit: 10
 });
 
@@ -19,7 +19,7 @@ const addUserIdColumn = () => {
         const checkColumnQuery = `
             SELECT COUNT(*) as count 
             FROM information_schema.COLUMNS 
-            WHERE TABLE_SCHEMA = 'ProjetPfeAgil' 
+            WHERE TABLE_SCHEMA = '${process.env.DB_NAME || 'pfedb'}' 
             AND TABLE_NAME = 'Commande' 
             AND COLUMN_NAME = 'idUtilisateur'
         `;
