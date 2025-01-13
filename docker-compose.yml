@@ -3,6 +3,9 @@ version: '3.8'
 services:
   frontend:
     image: oussama22444/frontend:latest
+    build:
+      context: ./pfe-project-front
+      dockerfile: Dockerfile.frontend
     ports:
       - "8099:80"
     depends_on:
@@ -12,6 +15,9 @@ services:
 
   backend:
     image: oussama22444/backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
     environment:
       - DB_HOST=db
       - DB_USER=root
@@ -23,6 +29,7 @@ services:
       - db
     networks:
       - app-network
+    restart: always
 
   db:
     image: mysql:8.0
@@ -35,6 +42,7 @@ services:
       - "3306:3306"
     networks:
       - app-network
+    restart: always
 
 volumes:
   mysql-data:
