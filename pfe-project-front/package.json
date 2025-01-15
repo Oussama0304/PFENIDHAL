@@ -53,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "publishConfig": {
+    "registry": "http://192.168.74.167:8081/repository/npm-hosted/"
   }
 }
