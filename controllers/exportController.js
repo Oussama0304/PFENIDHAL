@@ -98,9 +98,9 @@ exports.exportToExcel = async (req, res) => {
         res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         res.setHeader('Content-Disposition', 'attachment; filename=rapport.xlsx');
 
-        // Envoyer le workbook
-        await workbook.xlsx.write(res);
-        res.end();
+        // Générer le buffer et l'envoyer
+        const buffer = await workbook.xlsx.writeBuffer();
+        res.send(buffer);
     } catch (error) {
         console.error('Erreur lors de la génération du fichier Excel:', error);
         res.status(500).json({ message: 'Erreur lors de la génération du fichier Excel' });
