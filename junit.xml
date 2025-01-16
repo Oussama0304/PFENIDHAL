@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="1.376">
+  <testsuite name="Export Controller Tests" errors="0" failures="0" skipped="0" timestamp="2025-01-16T19:21:58" time="1.295" tests="6">
+    <testcase classname="Export Controller Tests › exportToPdf" name="should generate PDF with correct data" time="0.051">
+    </testcase>
+    <testcase classname="Export Controller Tests › exportToPdf" name="should handle error when PDF generation fails" time="0.039">
+    </testcase>
+    <testcase classname="Export Controller Tests › exportToPdf" name="should handle empty data" time="0">
+    </testcase>
+    <testcase classname="Export Controller Tests › exportToExcel" name="should generate Excel with correct data" time="0.001">
+    </testcase>
+    <testcase classname="Export Controller Tests › exportToExcel" name="should handle error when Excel generation fails" time="0.004">
+    </testcase>
+    <testcase classname="Export Controller Tests › exportToExcel" name="should handle empty data" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
